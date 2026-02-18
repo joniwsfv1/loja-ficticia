@@ -8,10 +8,12 @@ body {
     height: 100vh;
     background: #111;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;
+    font-family: 'Lexend', sans-serif;
 }
 
-/* ===== NOME CENTRAL ===== */
+/* ===== LOGO CENTRAL ===== */
+
 .main-content {
     position: absolute;
     top: 50%;
@@ -22,19 +24,19 @@ body {
 
 .logo {
     font-family: 'Alfa Slab One', cursive;
-    font-size: 200px; /* DOBRADO */
+    font-size: clamp(80px, 12vw, 200px);
     letter-spacing: 8px;
 }
 
 .subtitle {
-    font-family: 'Lexend', sans-serif;
     margin-top: 30px;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 300;
     opacity: 0.8;
 }
 
-/* ===== MENU LATERAL DIREITA ===== */
+/* ===== MENU DESKTOP ===== */
+
 .sidebar {
     position: fixed;
     right: 0;
@@ -55,11 +57,9 @@ body {
 }
 
 .sidebar a {
-    font-family: 'Lexend', sans-serif;
     text-decoration: none;
     color: white;
-    font-size: 32px; /* AUMENTADO PROPORCIONALMENTE */
-    font-weight: 400;
+    font-size: 32px;
     transition: 0.3s ease;
 }
 
@@ -68,7 +68,7 @@ body {
     transform: translateX(-10px);
 }
 
-/* ===== BOTÃO MENU ===== */
+/* ===== BOTÃO MOBILE ===== */
 
 .menu-toggle {
     display: none;
@@ -78,7 +78,6 @@ body {
     font-size: 35px;
     cursor: pointer;
     z-index: 1000;
-    font-family: 'Lexend', sans-serif;
 }
 
 /* ===== RESPONSIVO ===== */
@@ -97,9 +96,8 @@ body {
         width: 220px;
         background: #000;
         transition: 0.4s ease;
-        display: flex;
         justify-content: center;
-        align-items: center;
+        padding-right: 0;
     }
 
     .sidebar.active {
@@ -107,11 +105,25 @@ body {
     }
 
     .sidebar ul {
-        flex-direction: column;
-        text-align: right;
+        text-align: center;
     }
 
     .sidebar li {
         margin: 25px 0;
+    }
+
+    .sidebar a {
+        font-size: 24px;
+    }
+
+    .main-content {
+        position: relative;
+        top: 40%;
+        transform: translate(-50%, -40%);
+        padding: 20px;
+    }
+
+    .subtitle {
+        font-size: 18px;
     }
 }
