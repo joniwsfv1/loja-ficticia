@@ -67,3 +67,51 @@ body {
     color: #00ff88;
     transform: translateX(-10px);
 }
+
+/* ===== BOTÃO MENU ===== */
+
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 1000;
+    font-family: 'Lexend', sans-serif;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 220px;
+        background: #000;
+        transition: 0.4s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sidebar.active {
+        right: 0;
+    }
+
+    .sidebar ul {
+        flex-direction: column;
+        text-align: right;
+    }
+
+    .sidebar li {
+        margin: 25px 0;
+    }
+}
