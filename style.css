@@ -5,33 +5,32 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: #111;
     color: white;
-    overflow-x: hidden;
     font-family: 'Lexend', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
 }
 
-/* ===== LOGO CENTRAL ===== */
+/* ===== CONTEÚDO CENTRAL ===== */
 
 .main-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
+    padding: 20px;
 }
 
 .logo {
     font-family: 'Alfa Slab One', cursive;
-    font-size: clamp(80px, 12vw, 200px);
-    letter-spacing: 8px;
+    font-size: clamp(60px, 12vw, 180px);
+    letter-spacing: 6px;
 }
 
 .subtitle {
-    margin-top: 30px;
-    font-size: 28px;
-    font-weight: 300;
+    margin-top: 20px;
+    font-size: clamp(16px, 3vw, 28px);
     opacity: 0.8;
 }
 
@@ -39,12 +38,9 @@ body {
 
 .sidebar {
     position: fixed;
-    right: 0;
-    top: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-right: 40px;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .sidebar ul {
@@ -53,19 +49,19 @@ body {
 }
 
 .sidebar li {
-    margin: 35px 0;
+    margin: 30px 0;
 }
 
 .sidebar a {
     text-decoration: none;
     color: white;
-    font-size: 32px;
-    transition: 0.3s ease;
+    font-size: 28px;
+    transition: 0.3s;
 }
 
 .sidebar a:hover {
     color: #00ff88;
-    transform: translateX(-10px);
+    transform: translateX(-8px);
 }
 
 /* ===== BOTÃO MOBILE ===== */
@@ -84,6 +80,10 @@ body {
 
 @media (max-width: 768px) {
 
+    body {
+        flex-direction: column;
+    }
+
     .menu-toggle {
         display: block;
     }
@@ -96,8 +96,10 @@ body {
         width: 220px;
         background: #000;
         transition: 0.4s ease;
+        display: flex;
         justify-content: center;
-        padding-right: 0;
+        align-items: center;
+        transform: none;
     }
 
     .sidebar.active {
@@ -113,17 +115,6 @@ body {
     }
 
     .sidebar a {
-        font-size: 24px;
-    }
-
-    .main-content {
-        position: relative;
-        top: 40%;
-        transform: translate(-50%, -40%);
-        padding: 20px;
-    }
-
-    .subtitle {
-        font-size: 18px;
+        font-size: 22px;
     }
 }
