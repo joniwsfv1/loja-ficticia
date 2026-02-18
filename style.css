@@ -5,7 +5,7 @@
 }
 
 body {
-    min-height: 100vh;
+    min-height: 100svh; /* melhor que 100vh no mobile */
     background: #111;
     color: white;
     font-family: 'Lexend', sans-serif;
@@ -14,6 +14,7 @@ body {
     align-items: center;
     overflow-x: hidden;
 }
+
 
 /* ===== CONTEÚDO CENTRAL ===== */
 
@@ -41,7 +42,9 @@ body {
     right: 40px;
     top: 50%;
     transform: translateY(-50%);
+    max-width: 90vw;
 }
+
 
 .sidebar ul {
     list-style: none;
@@ -89,19 +92,19 @@ body {
     }
 
     .sidebar {
-        position: fixed;
-        right: -100%;
-        top: 0;
-        height: 100vh;
-        width: 220px;
-        background: #000;
-        transition: 0.4s ease;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transform: none;
-    }
-
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100svh;
+    width: 80%;
+    max-width: 280px;
+    background: #000;
+    transition: right 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+    
     .sidebar.active {
         right: 0;
     }
