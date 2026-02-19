@@ -25,9 +25,13 @@ body {
 
 .logo {
     font-family: 'Alfa Slab One', cursive;
-    font-size: clamp(60px, 12vw, 180px);
-    letter-spacing: 6px;
+    font-size: clamp(40px, 9vw, 140px);
+    letter-spacing: 3px;
+    line-height: 1.1;
+    max-width: 100%;
+    word-break: break-word;
 }
+
 
 .subtitle {
     margin-top: 20px;
@@ -121,3 +125,31 @@ body {
         font-size: 22px;
     }
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* impede scroll lateral */
+}
+
+.main-content {
+    width: 100%;
+    max-width: 100vw;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+
+    .logo {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+}
+
