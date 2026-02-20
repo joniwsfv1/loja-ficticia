@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Suporte - Nome da Loja</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="nova.png" type="image/x-icon">
 </head>
 <body class="suporte-body">
 
@@ -12,6 +13,10 @@
     <h1>Suporte</h1>
     <a href="index.html" class="voltar">Voltar</a>
   </header>
+
+<div id="mensagem-sucesso" style="display:none; color:lightgreen; margin-bottom:20px;">
+  Mensagem enviada com sucesso!
+</div>
 
 <form action="https://formsubmit.co/joniws.tenorio@gmail.com" method="POST">
 
@@ -32,5 +37,11 @@
     </form>
   </section>
 
+  <script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("enviado") === "true") {
+    document.getElementById("mensagem-sucesso").style.display = "block";
+  }
+</script>
 </body>
 </html>

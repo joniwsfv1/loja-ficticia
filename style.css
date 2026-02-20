@@ -222,3 +222,28 @@ body {
   background-color: #cc0000;
 }
 
+/* RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+  .suporte-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .suporte-header h1 {
+    font-size: 28px;
+  }
+
+  .suporte-container {
+    padding: 0 10px;
+  }
+
+  .suporte-container input,
+  .suporte-container textarea,
+  .suporte-container button {
+    font-size: 14px;
+  }
+
+}
