@@ -6,41 +6,41 @@
   <title>Suporte - Nome da Loja</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="nova.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="suporte-body">
+<body>
 
-  <header class="suporte-header">
+<section class="suporte-section">
+
+  <div class="suporte-container">
+
     <h1>Suporte</h1>
-    <a href="index.html" class="voltar">Voltar</a>
-  </header>
 
-<div id="mensagem-sucesso" style="display:none; color:lightgreen; margin-bottom:20px;">
-  Mensagem enviada com sucesso!
-</div>
+    <div id="mensagem-sucesso" class="sucesso">
+      ✅ Mensagem enviada com sucesso!
+    </div>
 
-<form action="https://formsubmit.co/joniws.tenorio@gmail.com" method="POST">
+    <form action="https://formsubmit.co/joniws.tenorio@gmail.com" method="POST">
 
-  <input type="hidden" name="_next" value="https://joniwsfv1.github.io/loja-ficticia/suporte.html">
+      <input type="hidden" name="_next" value="https://joniwsfv1.github.io/loja-ficticia/suporte.html?enviado=true">
+      <input type="hidden" name="_captcha" value="false">
 
-  <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="nome" placeholder="Seu nome" required>
+      <input type="email" name="email" placeholder="Seu email" required>
+      <textarea name="mensagem" rows="5" placeholder="Digite sua mensagem" required></textarea>
 
-  <input type="text" name="nome" placeholder="Seu nome" required>
-
-  <input type="email" name="email" placeholder="Seu email" required>
-
-  <textarea name="mensagem" placeholder="Digite sua mensagem" required></textarea>
-
-  <button type="submit">Enviar</button>
-
-</form>
+      <button type="submit">Enviar</button>
 
     </form>
-  </section>
 
-  <script>
+  </div>
+
+</section>
+<script>
   const params = new URLSearchParams(window.location.search);
   if (params.get("enviado") === "true") {
-    document.getElementById("mensagem-sucesso").style.display = "block";
+    const mensagem = document.getElementById("mensagem-sucesso");
+    mensagem.style.display = "block";
   }
 </script>
 </body>
